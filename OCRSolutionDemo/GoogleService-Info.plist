@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>20076293908-k5eg1gj9nqvsb3s9obmnu39p4fucio8m.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.20076293908-k5eg1gj9nqvsb3s9obmnu39p4fucio8m</string>
+	<key>API_KEY</key>
+	<string>AIzaSyCvQIikp3oYFrcAuXA03RNJ9Yjs_PRjeOc</string>
+	<key>GCM_SENDER_ID</key>
+	<string>20076293908</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>YueC.OCRSolutionDemo</string>
+	<key>PROJECT_ID</key>
+	<string>yuechen-b35ae</string>
+	<key>STORAGE_BUCKET</key>
+	<string>yuechen-b35ae.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:20076293908:ios:44d6fa3c46fd2ab4939c01</string>
+	<key>DATABASE_URL</key>
+	<string>https://yuechen-b35ae.firebaseio.com</string>
+</dict>
+</plist>

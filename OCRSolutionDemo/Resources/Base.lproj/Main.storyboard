@@ -1,0 +1,250 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="n8f-q0-e1u">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--FirebaseML-->
+        <scene sceneID="qzC-Cc-BV2">
+            <objects>
+                <viewController id="CKf-CS-dN7" customClass="FirebaseOCRViewController" customModule="OCRSolutionDemo" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="LJj-Jc-7Kx">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="Ryv-8v-L8s">
+                                <rect key="frame" x="0.0" y="44" width="414" height="256"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Firebase ML OCR" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="L2f-KA-7vh">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="64"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="64" id="5lb-Zr-ClN"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="22"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="1" translatesAutoresizingMaskIntoConstraints="NO" id="nQb-A3-h0E">
+                                        <rect key="frame" x="0.0" y="64" width="414" height="65"/>
+                                        <segments>
+                                            <segment title="Small Range Finder"/>
+                                            <segment title="Medium range finder"/>
+                                            <segment title="Large range finder"/>
+                                        </segments>
+                                        <connections>
+                                            <action selector="updateRangeFinderSizeWithSender:" destination="CKf-CS-dN7" eventType="valueChanged" id="0JD-p6-nRt"/>
+                                        </connections>
+                                    </segmentedControl>
+                                    <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="Ch3-nX-bZV">
+                                        <rect key="frame" x="0.0" y="128" width="414" height="65"/>
+                                        <segments>
+                                            <segment title="On device"/>
+                                            <segment title="Cloud"/>
+                                        </segments>
+                                        <connections>
+                                            <action selector="updateEngineModeWithSender:" destination="CKf-CS-dN7" eventType="valueChanged" id="pgS-yN-Cmm"/>
+                                        </connections>
+                                    </segmentedControl>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0zs-AO-g04">
+                                        <rect key="frame" x="0.0" y="192" width="414" height="64"/>
+                                        <color key="backgroundColor" systemColor="opaqueSeparatorColor" red="0.77647058820000003" green="0.77647058820000003" blue="0.7843137255" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
+                                        <state key="normal" title="Start">
+                                            <color key="titleColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                            <color key="titleShadowColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="startTappedWithSender:" destination="CKf-CS-dN7" eventType="touchUpInside" id="kLl-YM-BGg"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="Ryv-8v-L8s" firstAttribute="top" secondItem="usS-Ha-amf" secondAttribute="top" id="3NK-8C-PeQ"/>
+                            <constraint firstItem="usS-Ha-amf" firstAttribute="trailing" secondItem="Ryv-8v-L8s" secondAttribute="trailing" id="XND-gZ-cY2"/>
+                            <constraint firstItem="Ryv-8v-L8s" firstAttribute="leading" secondItem="usS-Ha-amf" secondAttribute="leading" id="evN-iN-kg0"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="usS-Ha-amf"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="FirebaseML" id="LZk-pA-xak"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fUC-lO-dYv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="195" y="33"/>
+        </scene>
+        <!--Tesseract-->
+        <scene sceneID="9Xd-AN-5EP">
+            <objects>
+                <viewController storyboardIdentifier="TesseractViewController" id="ZLM-FK-wCC" customClass="TesseractViewController" customModule="OCRSolutionDemo" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="FIw-1R-cI3">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="365-8t-OJq">
+                                <rect key="frame" x="0.0" y="44" width="414" height="512"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tesseract OCR" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="94O-7R-8iO">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="64"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="64" id="gg0-45-xnT"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="22"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="1" translatesAutoresizingMaskIntoConstraints="NO" id="rqr-Ym-OPH">
+                                        <rect key="frame" x="0.0" y="64" width="414" height="65"/>
+                                        <segments>
+                                            <segment title="Small Range Finder"/>
+                                            <segment title="Medium range finder"/>
+                                            <segment title="Large range finder"/>
+                                        </segments>
+                                        <connections>
+                                            <action selector="updateRangeFinderSizeWithSender:" destination="ZLM-FK-wCC" eventType="valueChanged" id="eDb-PT-9B1"/>
+                                        </connections>
+                                    </segmentedControl>
+                                    <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="yVF-CC-b6L">
+                                        <rect key="frame" x="0.0" y="128" width="414" height="65"/>
+                                        <segments>
+                                            <segment title="Tesseract only"/>
+                                            <segment title="Combined"/>
+                                            <segment title="Cube only"/>
+                                        </segments>
+                                        <connections>
+                                            <action selector="updateEngineModeWithSender:" destination="ZLM-FK-wCC" eventType="valueChanged" id="HEq-9W-AGv"/>
+                                        </connections>
+                                    </segmentedControl>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="SCq-pn-I6X">
+                                        <rect key="frame" x="0.0" y="192" width="414" height="64"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Language:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dGo-yB-TJA">
+                                                <rect key="frame" x="8" y="8" width="84" height="48"/>
+                                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="eng" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Hn0-nM-ugg">
+                                                <rect key="frame" x="100" y="8" width="306" height="48"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                                <connections>
+                                                    <action selector="updateLanguageWithSender:" destination="ZLM-FK-wCC" eventType="editingChanged" id="Kz8-e8-uOP"/>
+                                                </connections>
+                                            </textField>
+                                        </subviews>
+                                        <edgeInsets key="layoutMargins" top="8" left="8" bottom="8" right="8"/>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="tNL-Ts-dLZ">
+                                        <rect key="frame" x="0.0" y="256" width="414" height="64"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Recognition time:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ckX-St-CfN">
+                                                <rect key="frame" x="8" y="8" width="140" height="48"/>
+                                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="0.5" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ZpS-c7-sI3">
+                                                <rect key="frame" x="156" y="8" width="250" height="48"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                                <connections>
+                                                    <action selector="updateRecognitionTimeWithSender:" destination="ZLM-FK-wCC" eventType="editingChanged" id="XGE-vo-pgv"/>
+                                                </connections>
+                                            </textField>
+                                        </subviews>
+                                        <edgeInsets key="layoutMargins" top="8" left="8" bottom="8" right="8"/>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="epT-zh-nwO">
+                                        <rect key="frame" x="0.0" y="320" width="414" height="64"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Whitelist:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jn1-l7-mcW">
+                                                <rect key="frame" x="8" y="8" width="76" height="48"/>
+                                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="BO3-eX-28B">
+                                                <rect key="frame" x="92" y="8" width="314" height="48"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                                <connections>
+                                                    <action selector="updateWhiteListWithSender:" destination="ZLM-FK-wCC" eventType="editingChanged" id="oVe-va-ZnV"/>
+                                                </connections>
+                                            </textField>
+                                        </subviews>
+                                        <edgeInsets key="layoutMargins" top="8" left="8" bottom="8" right="8"/>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="J8P-Jn-afe">
+                                        <rect key="frame" x="0.0" y="384" width="414" height="64"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Blacklist:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bmk-3i-lYC">
+                                                <rect key="frame" x="8" y="8" width="73" height="48"/>
+                                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="CEV-vN-3rU">
+                                                <rect key="frame" x="89" y="8" width="317" height="48"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                                <connections>
+                                                    <action selector="updateBlackListWithSender:" destination="ZLM-FK-wCC" eventType="editingChanged" id="SBh-5m-EVl"/>
+                                                </connections>
+                                            </textField>
+                                        </subviews>
+                                        <edgeInsets key="layoutMargins" top="8" left="8" bottom="8" right="8"/>
+                                    </stackView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2tS-Qh-TxF">
+                                        <rect key="frame" x="0.0" y="448" width="414" height="64"/>
+                                        <color key="backgroundColor" systemColor="opaqueSeparatorColor" red="0.77647058820000003" green="0.77647058820000003" blue="0.7843137255" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
+                                        <state key="normal" title="Start">
+                                            <color key="titleColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                            <color key="titleShadowColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="startButtonTappedWithSender:" destination="ZLM-FK-wCC" eventType="touchUpInside" id="Kaj-7z-gnP"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="365-8t-OJq" firstAttribute="top" secondItem="T85-bq-uU8" secondAttribute="top" id="SaI-6o-TRa"/>
+                            <constraint firstItem="T85-bq-uU8" firstAttribute="trailing" secondItem="365-8t-OJq" secondAttribute="trailing" id="cGU-ak-eid"/>
+                            <constraint firstItem="365-8t-OJq" firstAttribute="leading" secondItem="T85-bq-uU8" secondAttribute="leading" id="kVY-HE-O8I"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="T85-bq-uU8"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Tesseract" id="nIK-y2-NUp"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Cqw-LU-aCm" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="195" y="-614"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="nu1-hN-dd8">
+            <objects>
+                <tabBarController id="n8f-q0-e1u" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="6yI-Uc-NWB">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="ZLM-FK-wCC" kind="relationship" relationship="viewControllers" id="vEF-cx-Dzg"/>
+                        <segue destination="CKf-CS-dN7" kind="relationship" relationship="viewControllers" id="Rt4-HH-VeF"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="WSP-AE-6al" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-724" y="-290"/>
+        </scene>
+    </scenes>
+</document>
